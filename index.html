@@ -24,21 +24,16 @@
     }
 
     function jump() {
-        const searchParams = new URLSearchParams(window.location.search)
-
-        // e.g. https://xxx.pages.dev??androidid=com.xxx.xxx&iosid=idXXXXXXXXXX&defaulturl=xxx.com
         const os = getMobileOperatingSystem();
-        if (os == "Android" && searchParams.get('androidid') != null) {
-            window.location.href = "https://play.google.com/store/apps/details?id=" + searchParams.get('androidid');
+        if (os == "Android") {
+            window.location.href = "https://play.google.com/store/apps/details?id=" + "com.hitcomputer.hitoshi";
             return;
         }
-        if (os == "iOS" && searchParams.get('iosid') != null) {
-            window.location.href = "https://apps.apple.com/app/" + searchParams.get('iosid');
+        if (os == "iOS") {
+            window.location.href = "https://apps.apple.com/app/" + "id1622496073";
             return;
         }
-        if (searchParams.get('defaulturl') != null) {
-            window.location.href = "https://" + searchParams.get('defaulturl');
-        }
+        window.location.href = "https://" + "twitter.com/bashikoma_app";
     }
 </script>
 
